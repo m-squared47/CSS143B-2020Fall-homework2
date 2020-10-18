@@ -1,6 +1,6 @@
 package Problem3;
 
-public class MovieAction extends Movie {
+/*public class MovieAction extends Movie {
 
     private int lateFeePerDayInDollar = 5;
 
@@ -23,4 +23,4 @@ public class MovieAction extends Movie {
     public int calcLateFees(int numOfDaysPastDue) {
         // homework
     }
-}
+}*/

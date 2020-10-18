@@ -1,6 +1,6 @@
 package Problem3;
 
-public class BookFiction extends Book {
+/*public class BookFiction extends Book {
 
     private int lateFeePerDayInDollar = 2;
 
@@ -26,4 +26,4 @@ public class BookFiction extends Book {
     public int calcLateFees(int numOfDaysPastDue) {
         // homework
     }
-}
+}*/

@@ -14,12 +14,13 @@ public abstract class Book implements StoreMediaOperations {
     }
 
     // copy constructor
-    public Book(Book anotherBook) {
+    public void Book(Book anotherBook) {
         // homework
     }
 
     @Override
     public boolean equals(Object obj) {
         // homework
+        return true;
     }
 }

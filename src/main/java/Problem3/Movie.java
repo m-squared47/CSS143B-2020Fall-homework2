@@ -2,7 +2,7 @@ package Problem3;
 
 import java.util.UUID;
 
-public abstract class Movie implements StoreMediaOperations {
+/*public abstract class Movie implements StoreMediaOperations {
     String rating;
     String title;
     UUID id;
@@ -20,4 +20,4 @@ public abstract class Movie implements StoreMediaOperations {
     public boolean equals(Object obj) {
         // homework
     }
-}
+}*/
