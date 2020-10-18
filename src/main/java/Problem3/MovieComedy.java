@@ -1,16 +1,14 @@
 package Problem3;
 
-/*public class MovieComedy extends Movie {
+public class MovieComedy extends Movie {
     private int lateFeePerDayInDollar = 3;
 
     public MovieComedy(String rating, String title) {
-        // homework
-        // tip: use the 'super' keyword
+        super(rating, title);
     }
 
     public MovieComedy(MovieComedy anotherMovie) {
-        // homework
-        // tip: use the 'super' keyword
+        super(anotherMovie);
     }
 
     @Override
@@ -20,6 +18,10 @@ package Problem3;
 
     @Override
     public int calcLateFees(int numOfDaysPastDue) {
-        // homework
+        if(numOfDaysPastDue > 0) {                              //if late, fee
+            return numOfDaysPastDue * lateFeePerDayInDollar;
+        }else{                                                  //if not late, no fee
+            return 0;
+        }
     }
-}*/
+}
