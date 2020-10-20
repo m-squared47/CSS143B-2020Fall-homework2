@@ -11,29 +11,47 @@ public class Problem2 {
     // Do not change signature (function name, parameters and return type)
     // Do not use extra space for another array. Solution to be in-pace with O(1) extra memory
     public static int remove(int[] nums) {
-        int search;                                 //search value
-        int[] removed = new int[nums.length];       //array of non duplicates
-        int index = 1;                              //index of removed[]
+        int[] hold = nums;          //temporary array
+        int search = hold[0];       //search value
+        int size;                   //size of new array
+        int[] newNums;              //new array
+        int index = 0;
 
-        removed[0] = nums[0];               //assuming the array is sorted, first element is the first value
-        search = nums[0];
+        if(hold.length > 0){        //if input array is not empty
+            size = 1;
+        }else{                      //if input array is empty
+            size = 0;               //new array has no elements
+        }
 
-        for(int value : nums){              //for every element in nums
-            if(search < value){             //if the search value is less than the array element
-                removed[index] = value;     //store the array element at index
-                search = value;             //store the array element into the search value
-                index++;                    //increment index by 1
+        //find and ignore duplicates
+        for(int i = 0; i < hold.length && size != 0; i++){  //for every element in the input array
+            if(search < hold[i]){                           //if the next value is more than the search value
+                size++;                                     //new array size +1
+                search = hold[i];                           //new search value is the greater value
             }
         }
 
-        int[] remove_cut = new int[index];          //removed[] with no empty spaces
+        newNums = new int[size];    //define the new array
+        search = hold[0];
 
-        for(int i = 0; i < remove_cut.length; i++){     //translate removed[] to remove_cut[]
-            remove_cut[i] = removed[i];
+        for(int i = 0; i < hold.length && size != 0; i++){  //for every element in the input array
+            if(search < hold[i]){                           //if the next value is more than the search value
+                newNums[index] = search;                    //put search value into the index specified
+                search = hold[i];                           //search value is now the greater value
+                index++;                                    //increment index by 1
+            }
+
+            if(i == hold.length - 1){
+                newNums[index] = hold[i];
+            }
         }
 
-        nums = remove_cut;      //remove_cut[] stored in nums[]
 
-        return nums.length;     //return length of array
+        //copy newNums[] to nums
+        for(int i = 0; i < newNums.length; i++){            //for every element in the copy array
+            nums[i] = newNums[i];                           //copy to nums[]
+        }
+
+        return size;     //return the length of nums[]
     }
 }
