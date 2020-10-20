@@ -12,15 +12,17 @@ public class Problem2 {
     // Do not use extra space for another array. Solution to be in-pace with O(1) extra memory
     public static int remove(int[] nums) {
         int[] hold = nums;          //temporary array
-        int search = hold[0];       //search value
+        int search;
         int size;                   //size of new array
         int[] newNums;              //new array
         int index = 0;
 
         if(hold.length > 0){        //if input array is not empty
             size = 1;
+            search = hold[0];   //search value
         }else{                      //if input array is empty
             size = 0;               //new array has no elements
+            search = 0;
         }
 
         //find and ignore duplicates
@@ -32,7 +34,10 @@ public class Problem2 {
         }
 
         newNums = new int[size];    //define the new array
-        search = hold[0];
+
+        if (hold.length > 0) {      //reset search value
+            search = hold[0];
+        }
 
         for(int i = 0; i < hold.length && size != 0; i++){  //for every element in the input array
             if(search < hold[i]){                           //if the next value is more than the search value

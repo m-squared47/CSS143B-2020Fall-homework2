@@ -5,7 +5,7 @@ public class Problem1 {
     The test will go through the array looking for numbers 0-2. If an element matches, then the first non-modified
     element will be swapped with the match. This sort doesn't check until the array is sorted, but goes until the
     number limit is reached. This is like selection sort but this sort checks for matches only between
-    0-2. Because of this, this method is a situational use case. 
+    0-2. Because of this, this method is a situational use case.
      */
 
     // Do not change signature (function name, parameters type, and return type)
